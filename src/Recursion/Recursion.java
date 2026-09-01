@@ -5,25 +5,29 @@ public class Recursion {
 //        printNumber(0);
 //        int ans = fib(3);
 //        System.out.println(ans);
-//        int[] arr = {1, 4, 6, 8, 12, 16, 18};
-//        int target = 12;
-//        int ans = binarySearch(arr, target, 0, arr.length - 1);
-//        System.out.println(ans);
-        int ans = countDigit(5542533);
-        System.out.println(ans);
+//        int ans = countDigit(5542533);
+//        System.out.println(GCD(12, 18));
+        System.out.println(reverseNumber(1242, 0));
     }
-    static void printNumber(int n){
-        if(n == 5){
-            return;
+    static void printNumberBefor(int n){
+        if(n == 0){
+            return;  // Base Condition
         }
-        printNumber(n + 1);
         System.out.println(n);
+        printNumberBefor(n - 1); // happens BEFORE recursion
+    }
+    static void printNumberAfter(int n){
+        if(n == 5){
+            return;  // Base Condition
+        }
+        printNumberAfter(n + 1); // Recursive First
+        System.out.println(n); // happens AFTER recursion
     }
     static int fib(int n){
         if(n < 2){
-            return n;
+            return n; // Base Condition
         }
-        return fib(n - 1) + fib(n - 2);
+        return fib(n - 1) + fib(n - 2); // Function Calls
     }
     static int fact(int n){
         if(n == 1) {
@@ -43,14 +47,17 @@ public class Recursion {
         }
         return 1 + countDigit(n / 10);
     }
-    static int binarySearch(int[] arr, int target, int first, int last){
-            int mid = first + (last - first) / 2;
-            if(arr[mid] == target){
-                return mid;
-            } else if (arr[mid] > target){
-                return binarySearch(arr, target, first, mid - 1);
-            } else {
-                return binarySearch(arr, target, mid + 1, last);
-            }
+    static int GCD(int a, int b){
+        if(a == 0){
+            return b;
+        }
+        return GCD(b % a, a);
+    }
+    static int reverseNumber(int num, int rev){
+        if(num == 0){
+            return rev;
+        }
+
+        return reverseNumber(num / 10, rev * 10 + num % 10);
     }
 }
