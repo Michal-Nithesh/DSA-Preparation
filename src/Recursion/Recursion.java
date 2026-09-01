@@ -7,7 +7,8 @@ public class Recursion {
 //        System.out.println(ans);
 //        int ans = countDigit(5542533);
 //        System.out.println(GCD(12, 18));
-        System.out.println(reverseNumber(1242, 0));
+//        System.out.println(reverseNumber(1242, 0));
+        System.out.println(countZeros(02030062, 0));
     }
     static void printNumberBefor(int n){
         if(n == 0){
@@ -59,5 +60,15 @@ public class Recursion {
         }
 
         return reverseNumber(num / 10, rev * 10 + num % 10);
+    }
+    static int countZeros(int num, int count){
+        if(num == 0){
+            return count;
+        }
+        int oneDigit = num % 10;
+        if(oneDigit == 0){
+            count++;
+        }
+        return countZeros(num / 10, count);
     }
 }
