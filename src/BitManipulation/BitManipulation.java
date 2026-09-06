@@ -61,7 +61,7 @@ public class BitManipulation {
         return new int[]{first, second};
     }
     
-    static int ithBitSetorClear(int num, int i){
+    static int ithBitSetOrClear(int num, int i){
         return (num & (1 << i)) == 0 ? 0 : 1;
     }
 

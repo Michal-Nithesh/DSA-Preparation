@@ -1,10 +1,16 @@
 package Hashing;
 
-public class Hashing {
+import java.util.Arrays;
+
+public class NumberHashing {
     public static void main(String[] args){
-        int[] arr = {2, 3, 2, 4, 3, 2, 5};
+//        int[] arr = {2, 3, 2, 4, 3, 2, 5};
 //        countFrequency(arr);
-        System.out.println(leastFrequentElement(arr));
+//        System.out.println(leastFrequentElement(arr));
+//        int[] arr = {4, 5, 1, 2, 1, 4, 5};
+//        System.out.println(firstElementFrequency1(arr));
+        int[] arr = {1, 2, 3, 2, 4, 5, 1, 3};
+        System.out.println(Arrays.toString(findAllDuplicateElements(arr)));
     }
     public static void countFrequency(int[] arr){
         int[] freq = new int[5];
@@ -46,5 +52,31 @@ public class Hashing {
         }
         return element;
     }
-
+    public static int firstElementFrequency1(int[] arr){
+        int[] freq = new int[6];
+        for(int i = 0; i < arr.length; i++){
+            freq[arr[i]]++;
+        }
+        for(int i = 0; i < freq.length; i++){
+            if(freq[i] == 1){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static int[] findAllDuplicateElements(int[] arr){
+        int freq[] = new int[6];
+        for(int i = 0; i < arr.length; i++){
+            freq[arr[i]]++;
+        }
+        int[] removeDup = new int[5];
+        int index = 0;
+        for(int i = 0; i < freq.length; i++){
+            if(freq[i] > 1){
+                removeDup[index] = i;
+                index++;
+            }
+        }
+        return removeDup;
+    }
 }
