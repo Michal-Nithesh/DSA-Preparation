@@ -12,6 +12,12 @@ public class Playing {
         String s = "   fly me   to   the moon  ";
         System.out.println(lengthOfLastWord(s));
     }
+    public static void swapString(String str, int first, int second){
+        char[] chars = str.toCharArray();
+        char temp = chars[first];
+        chars[first] = chars[second];
+        chars[second] = temp;
+    }
 
     public static int twoDistinctChar(String s, int k) {
         int left = 0, right = 0, maxLength = 0;
@@ -56,7 +62,6 @@ public class Playing {
         }
         return array;
     }
-
     public static int lengthOfLastWord(String s) {
             int right = s.length() - 1;
             String rev = "";

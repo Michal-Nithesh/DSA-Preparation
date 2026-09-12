@@ -1,6 +1,6 @@
 package BitManipulation;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class BitManipulation {
     public static void main(String[] args) {
@@ -120,7 +120,26 @@ public class BitManipulation {
         }
         return count;
     }
+
+
     // Power Set(Print All subsets)
+    static List<List<Integer>> powerSet(int[] nums, int n){
+        int subsetNo = 1 << n;
+        List<List<Integer>> result = new ArrayList<>();
+        for(int mask = 0; mask < subsetNo; mask++){
+            List<Integer> list = new ArrayList<>();
+            for(int i = 0; i < n; i++){
+                if((mask & (1 << i)) != 0){
+                    list.add(nums[i]);
+                }
+            }
+            result.add(list);
+        }
+        return result;
+    }
+
+
+
     // Single number - |
     // Single Number - ||
 }
