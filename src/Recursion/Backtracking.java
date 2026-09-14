@@ -27,16 +27,8 @@ public class Backtracking {
         }
     }
 
-
-    //    Maze Path Counting Problem
+    //Maze Path Counting Problem
 //    Given an N × N maze with no blocked cells:
-//    ┌───┬───┬───┐
-//    │ S │   │   │
-//    ├───┼───┼───┤
-//    │   │   │   │
-//    ├───┼───┼───┤
-//    │   │   │ D │
-//    └───┴───┴───┘
 //    1.S = Start (0,0)
 //    2.D = Destination (N-1,N-1)
 //    3.Moves = Only D (Down) and R (Right)

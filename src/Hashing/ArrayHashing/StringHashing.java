@@ -1,4 +1,4 @@
-package Hashing;
+package Hashing.ArrayHashing;
 
 public class StringHashing {
     public static void main(String[] args){
@@ -14,10 +14,12 @@ public class StringHashing {
     }
     public static void charFrequency(String str){
         int[] freq = new int[26];
+        // Pre-Store
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
             freq[ch - 'a']++;
         }
+        // Fetching
         // Printing the Frequency Order
         for(int i = 0; i < freq.length; i++){
             if(freq[i] > 0){
@@ -35,9 +37,11 @@ public class StringHashing {
     }
     public static char nonRepeatingChar(String str){
         int[] freq = new int[26];
+        // Pre-Store
         for(int i = 0; i < str.length(); i++){
             freq[str.charAt(i) - 'a']++;
         }
+        // Fetching
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             if (freq[ch - 'a'] == 1) {
@@ -49,10 +53,12 @@ public class StringHashing {
     public static boolean checkAnagram(String s1, String s2){
         if(s1.length() != s2.length()){ return false; }
         int[] freq = new int[26];
+        // Pre-Store
         for(int i = 0; i < s1.length(); i++){
             freq[s1.charAt(i) - 'a']++;
             freq[s2.charAt(i) - 'a']--;
         }
+        // Fetching
         for(int i = 0; i < freq.length; i++){
             if(freq[i] != 0){
                 return false;
@@ -63,12 +69,14 @@ public class StringHashing {
     public static boolean checkPangram(String str){
         boolean[] freq = new boolean[26];
         str = str.toLowerCase();
+        // Pre-Store
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
             if (ch >= 'a' && ch <= 'z') {
                 freq[ch - 'a'] = true;
             }
         }
+        // Fetching
         for(int i = 0; i < freq.length; i++){
             if(!freq[i]){
                 return false;

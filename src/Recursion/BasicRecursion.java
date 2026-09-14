@@ -1,6 +1,6 @@
 package Recursion;
 
-public class Recursion {
+public class BasicRecursion {
     public static void main(String[] args){
 //        printNumber(0);
 //        int ans = fib(3);
