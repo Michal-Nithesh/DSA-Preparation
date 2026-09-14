@@ -9,7 +9,7 @@ public class Searching {
     }
     static int linearSearch(int[] arr, int target, int index){
         if(index >= arr.length){
-            return -1;
+            return -1; // Base Condition
         }
         if(arr[index] == target){
             return arr[index];

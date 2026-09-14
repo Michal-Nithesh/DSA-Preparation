@@ -17,20 +17,8 @@ public class Subsequence {
         subsequent(process + ch, unprocess.substring(1)); // Take
         subsequent(process, unprocess.substring(1)); // Don't Take
     }
-    public static void subsequence(String str, int index, ArrayList<Character> current) {
-        if (index == str.length()) {
-            System.out.println(current);
-            return;
-        }
-        // Take
-        current.add(str.charAt(index));
-        subsequence(str, index + 1, current);
-        // Undo
-        current.remove(current.size() - 1);
-        // Don't Take
-        subsequence(str, index + 1, current);
-    }
-    // 17. Letter Combinations of a Phone Number
+
+    // Leetcode 17. Letter Combinations of a Phone Number
     public static void combinationsOfPhoneNumber(String process, String unprocess){
         if(unprocess.isEmpty()){
             System.out.println(process);
@@ -42,8 +30,6 @@ public class Subsequence {
             combinationsOfPhoneNumber(process + ch, unprocess.substring(1));
         }
     }
-
-
 
     public List<String> letterCombinations(String digits) {
         List<String> ans = new ArrayList<String>();
@@ -60,5 +46,20 @@ public class Subsequence {
             char ch = (char)('a' + i);
             combinations(process + ch, unprocess.substring(1), list);
         }
+    }
+
+    // Bactracking Problem
+    public static void subsequence(String str, int index, ArrayList<Character> current) {
+        if (index == str.length()) {
+            System.out.println(current);
+            return;
+        }
+        // Take
+        current.add(str.charAt(index));
+        subsequence(str, index + 1, current);
+        // Undo
+        current.remove(current.size() - 1);
+        // Don't Take
+        subsequence(str, index + 1, current);
     }
 }

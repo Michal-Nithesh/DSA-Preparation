@@ -15,6 +15,23 @@ public class Subset {
         int target = 7;
         System.out.println(combinationSum(candidates, target));
     }
+
+    public static int countSumSubset(int[] arr, int index, int currentSum, int sum) {
+        if (index == arr.length) {
+            if (currentSum == sum) {
+                return 1;
+            }
+            return 0;
+        }
+        currentSum += arr[index];
+        int left = countSumSubset(arr, index + 1, currentSum, sum);
+
+        currentSum -= arr[index];
+        int right = countSumSubset(arr, index + 1, currentSum, sum);
+        return left + right;
+    }
+
+    // Backtracking Problem's
     public static void subset(int[] arr, int index, ArrayList<Integer> current){
         if(index == arr.length){
             System.out.println(current);
@@ -64,20 +81,6 @@ public class Subset {
         }
         return false;
 //      return firstSumSubset(arr, index + 1, result, currentSum, sum);
-    }
-    public static int countSumSubset(int[] arr, int index, int currentSum, int sum) {
-        if (index == arr.length) {
-            if (currentSum == sum) {
-                return 1;
-            }
-            return 0;
-        }
-        currentSum += arr[index];
-        int left = countSumSubset(arr, index + 1, currentSum, sum);
-
-        currentSum -= arr[index];
-        int right = countSumSubset(arr, index + 1, currentSum, sum);
-        return left + right;
     }
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();

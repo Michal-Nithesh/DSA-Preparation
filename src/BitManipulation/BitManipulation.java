@@ -121,7 +121,6 @@ public class BitManipulation {
         return count;
     }
 
-
     // Power Set(Print All subsets)
     static List<List<Integer>> powerSet(int[] nums, int n){
         int subsetNo = 1 << n;
