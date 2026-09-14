@@ -73,10 +73,14 @@ public class StratHashMap {
     public static void basicOperation(){
         HashMap<Integer, Integer> map = new HashMap<>();
         int[] arr = {1, 2, 1, 3, 4, 1, 2, 4, 4};
+
+        // Pre-Store
         for(int i = 0; i < arr.length; i++){
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
         System.out.println("Freq Counts: " + map);
+
+        // Fetching
         for(Map.Entry<Integer,Integer> entry: map.entrySet()){
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
