@@ -8,9 +8,12 @@ public class Playing {
 //        boolean ans = checkOnesSegment(strs);
 //        System.out.println(ans);
 //        int[] nums = {2, 5, 1, 3, 4, 7};
-        int n = 3;
-        String s = "   fly me   to   the moon  ";
-        System.out.println(lengthOfLastWord(s));
+//        int n = 3;
+//        String s = "   fly me   to   the moon  ";
+//        System.out.println(lengthOfLastWord(s));
+
+        int[] nums = {-4,-1,0,3,10};
+        System.out.println(Arrays.toString(sortedSquares(nums)));
     }
     public static void swapString(String str, int first, int second){
         char[] chars = str.toCharArray();
@@ -111,5 +114,25 @@ public class Playing {
             }
             System.out.println();
         }
+    }
+
+    public static int[] sortedSquares(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        int[] result = new int[nums.length];
+        int index = nums.length - 1;
+        while(left <= right){
+            int leftSquare = nums[left] * nums[left];
+            int rightSquare = nums[right] * nums[right];
+            if(leftSquare < rightSquare){
+                result[index] = rightSquare;
+                right--;
+            } else {
+                result[index] = leftSquare;
+                left++;
+            }
+            index--;
+        }
+        return result;
     }
 }
