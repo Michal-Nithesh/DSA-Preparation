@@ -9,7 +9,7 @@ public class Q2MaximumPointsYouCanObtainfromCards {
 
 
     public static int maxScore(int[] cardPoints, int k){
-        int leftSum = 0, rightSum = 0, maxSum = 0;
+        int leftSum = 0,  maxSum = 0;
         for(int i = 0; i <= k - 1; i++){
             leftSum += cardPoints[i];
             maxSum = leftSum;
@@ -19,7 +19,7 @@ public class Q2MaximumPointsYouCanObtainfromCards {
             leftSum -= cardPoints[i];
             leftSum += cardPoints[rightIndex];
             rightIndex--;
-            maxSum = Math.max(maxSum, leftSum + rightSum);
+            maxSum = Math.max(maxSum, leftSum);
         }
         return maxSum;
     }
