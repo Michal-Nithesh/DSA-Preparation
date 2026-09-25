@@ -16,8 +16,12 @@ public class Array {
 //        System.out.println(Arrays.toString(unionArray(nums1, nums2)));
 //        int[] nums = {10, 5, 2, 7, 1, 9};  int k = 15;
 //        System.out.println(longestSubarrayMethodII(nums, k));
-        int[] nums = {3,1,-2,-5,2,-4};
-        System.out.println(Arrays.toString(rearrangeArrayMethodIII(nums)));
+//        int[] nums = {3,1,-2,-5,2,-4};
+//        System.out.println(Arrays.toString(rearrangeArrayMethodIII(nums)));
+//        int[] nums = {2, 3, 5, -2, 7, -4};
+//        System.out.println(maxSubArray(nums));
+        int num = 28;
+        System.out.println(checkPerfectNumber(num));
 
     }
     public static int largestElement(int[] nums) {
@@ -187,5 +191,34 @@ public class Array {
             }
         }
         return result;
+    }
+    // Kadane's Algorithm
+    public static int maxSubArray(int[] nums) {
+        int maxSum = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i = 0; i < nums.length; i++){
+            sum += nums[i];
+            if(sum > maxSum){
+                maxSum = sum;
+            }
+            if(sum < 0){
+                sum = 0;
+            }
+        }
+        return maxSum;
+    }
+
+    public static boolean checkPerfectNumber(int num) {
+        int result = getPerfect(num);
+        return result == num;
+    }
+    public static int getPerfect(int num){
+        int sum = 0;
+        for(int i = 1; i < num; i++){
+            if (num % i == 0){
+                sum += i;
+            }
+        }
+        return sum;
     }
 }
