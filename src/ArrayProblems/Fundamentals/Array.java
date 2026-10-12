@@ -1,4 +1,4 @@
-package ArrayProblems;
+package ArrayProblems.Fundamentals;
 
 import java.util.*;
 
@@ -12,8 +12,6 @@ public class Array {
 //        int[] nums = {1,2,3,4,5,6,7}; int k = 3;
 //        rotateMethodI(nums, k);
 //        rotateMethodII(nums, k);
-//        int[] nums1 = {1, 2, 3, 4, 5}, nums2 = {1, 2, 7};
-//        System.out.println(Arrays.toString(unionArray(nums1, nums2)));
 //        int[] nums = {10, 5, 2, 7, 1, 9};  int k = 15;
 //        System.out.println(longestSubarrayMethodII(nums, k));
 //        int[] nums = {3,1,-2,-5,2,-4};
@@ -94,21 +92,6 @@ public class Array {
             start++;
             end--;
         }
-    }
-    public static int[] unionArray(int[] nums1, int[] nums2) {
-        Set<Integer> set = new HashSet<>();
-        for (int i : nums1) {
-            set.add(i);
-        }
-        for (int i : nums2) {
-            set.add(i);
-        }
-        int[] union = new int[set.size()];
-        int i = 0;
-        for(int nums: set){
-            union[i++] = nums;
-        }
-        return union;
     }
     public static int longestSubarrayMethodI(int[] nums, int k) {
         int longest = 0;
