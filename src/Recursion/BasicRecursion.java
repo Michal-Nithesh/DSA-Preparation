@@ -10,12 +10,12 @@ public class BasicRecursion {
 //        System.out.println(reverseNumber(1242, 0));
         System.out.println(countZeros(02030062, 0));
     }
-    static void printNumberBefor(int n){
+    static void printNumberBefore(int n){
         if(n == 0){
             return;  // Base Condition
         }
         System.out.println(n);
-        printNumberBefor(n - 1); // happens BEFORE recursion
+        printNumberBefore(n - 1); // happens BEFORE recursion
     }
     static void printNumberAfter(int n){
         if(n == 5){

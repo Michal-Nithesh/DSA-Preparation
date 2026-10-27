@@ -11,7 +11,7 @@ public class Array {
         int[] arr = {10, 20, 30, 20, 40, 20};
         int target = 20;
         List<Integer> list = new ArrayList<>();
-//        System.out.println(findAllIndex(arr, target, 0, list));
+        System.out.println(findAllIndex(arr, target, 0, list));
         System.out.println(findAllIndexWithoutPassList(arr, target, 0));
     }
     public static int sumOfArray(int[] arr, int index){
@@ -60,7 +60,7 @@ public class Array {
         arr[second] = temp;
     }
 
-    //Array List
+    //  Array List
     static List<Integer> findAllIndex(int[] arr, int target, int index, List<Integer> list){
         if(index == arr.length){
             return list;

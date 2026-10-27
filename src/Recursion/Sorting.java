@@ -5,14 +5,15 @@ import java.util.Arrays;
 
 public class Sorting {
     public static void main(String[] args){
-//        triangle(1,0, 6);
+        triangle(1,0, 6);
+        triangleReverse(4, 4);
 //        int[] arr = { 12, 1, 5, 4, 6, 43, 8};
 //        bubbleSort(arr, arr.length - 1, 0);
 //        System.out.println(Arrays.toString(arr));
 //        selectionSort(arr, arr.length - 1, 0, 0);
 //        System.out.println(Arrays.toString(arr));
-        int[] arr = {1, 2, 3};
-        System.out.println(subsetIterArrayList(arr));
+//        int[] arr = {1, 2, 3};
+//        System.out.println(subsetIterArrayList(arr));
     }
     // First understand the pattern
     static void triangle(int row, int column, int n){
